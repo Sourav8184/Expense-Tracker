@@ -1,5 +1,7 @@
+// Import modules:
 import mongoose from "mongoose";
 
+// Connnect Database method:
 const connect_DB = async () => {
   try {
     const connectionInstance = await mongoose.connect(
