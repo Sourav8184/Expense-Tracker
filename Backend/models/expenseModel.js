@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// Expense Schema:
 const ExpenseSchema = new mongoose.Schema(
   {
     title: {
@@ -38,5 +39,6 @@ const ExpenseSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+// Expense Model:
 const Expense = mongoose.model("Expense", ExpenseSchema);
 export { Expense };

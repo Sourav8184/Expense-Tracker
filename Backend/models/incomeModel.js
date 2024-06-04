@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// Income Schema:
 const IncomeSchema = new mongoose.Schema(
   {
     title: {
@@ -19,7 +20,7 @@ const IncomeSchema = new mongoose.Schema(
       default: "income",
     },
     date: {
-      type: Date,
+      type: String,
       required: true,
       trim: true,
     },
@@ -31,12 +32,13 @@ const IncomeSchema = new mongoose.Schema(
     description: {
       type: String,
       required: true,
-      maxLength: 20,
+      maxLength: 50,
       trim: true,
     },
   },
   { timestamps: true }
 );
 
+// Income model:
 const Income = mongoose.model("Income", IncomeSchema);
 export { Income };
