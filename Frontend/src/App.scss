@@ -1,0 +1,11 @@
+.app-container {
+  height: 100vh;
+  background-image: url("./images//bg.png");
+  position: relative;
+  .app-main {
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    gap: 2rem;
+  }
+}
