@@ -61,7 +61,7 @@ const getIncomes = asyncHandler(async (req, res) => {
 const deleteIncome = asyncHandler(async (req, res) => {
   const { id } = req.params;
   if (!id) {
-    throw new ApiError(400, "Invalid Id");
+    throw new ApiError(400, "Invalid income Id");
   }
   await Income.findByIdAndDelete(id)
     .then(() => {
