@@ -57,8 +57,8 @@ export const GlobalProvider = ({ children }) => {
 
   const getExpenses = async () => {
     const response = await axios.get(`${BASE_URL}get-expenses`);
-    setExpenses(response.data);
-    console.log(response.data);
+    setExpenses(response.data.data.expenses);
+    console.log(response.data.data.expenses);
   };
 
   const deleteExpense = async (id) => {
