@@ -7,17 +7,17 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 // Add income Method:
 const addExpense = asyncHandler(async (req, res) => {
   const { title, amount, category, description, date } = req.body;
-  console.log("1");
+
   try {
     //validations:
     if (!title || !category || !description || !date) {
       throw new ApiError(400, "All fields are required!");
     }
-    console.log("2");
+   
     if (amount <= 0 || !amount === "number") {
       throw new ApiError(400, "Amount must be a positive number!");
     }
-    console.log("3");
+   
     const expense = await Expense.create({
       title,
       amount,
@@ -25,11 +25,11 @@ const addExpense = asyncHandler(async (req, res) => {
       description,
       date,
     });
-    console.log("4");
+   
     if (!expense) {
       throw new ApiError(400, "Failed to store expense in the DB");
     }
-    console.log("5");
+   
     res
       .status(200)
       .json(
